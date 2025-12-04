@@ -1,0 +1,17 @@
+POST: http://localhost:3000/api/tasks
+  Body:
+  {
+    "title": "Meeting",
+    "description": "Meeting at 4pm"
+  }
+
+GET: http://localhost:3000/api/tasks
+
+PUT: http://localhost:3000/api/tasks/[give_some_id]
+  eg.: http://localhost:3000/api/tasks/6931d0e519750e4642b4f5af
+  Body:
+  {
+    "status": "Completed"
+  }
+
+DELETE: http://localhost:3000/api/tasks/[give_some_id]
