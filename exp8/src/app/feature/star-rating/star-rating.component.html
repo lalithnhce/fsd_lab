@@ -1,0 +1,12 @@
+<div class="star-rating" role="img" aria-label="Rating">
+  <span
+    class="star"
+    *ngFor="let s of stars; index as i"
+    [class.full]="i + 1 <= rating"
+    (click)="setRating(i + 1)"
+    (mouseenter)="onHover(i + 1)"
+    (mouseleave)="onHover(0)"
+  >
+    ★
+  </span>
+</div>
