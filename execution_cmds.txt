@@ -9,7 +9,7 @@ execute 5th, 6th, 7th, 10th program:
   1. npm install 
   2. npm run start
 
-excecute 11th program: (root: exp11/)
+excecute 11th and 12th program: (root: exp11/ or exp12/)
   1. Go to client folder by: cd client
   2. npm install
   3. npm run start
