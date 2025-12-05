@@ -1,0 +1,116 @@
+/* App layout base */
+:root{
+  --bg-1: #0f1724; /* deep blue */
+  --bg-2: #0b1b2b; /* darker blue */
+  --card: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.06);
+  --muted: #94a3b8; /* muted text */
+  --accent: #7c5cff; /* purple accent */
+  --accent-2: #5eead4; /* teal accent */
+  --success: #7ee7a6;
+  --danger: #ff7a7a;
+  --glass-border: rgba(255,255,255,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 200ms cubic-bezier(.2,.9,.3,1);
+}
+
+/* Reset & page background */
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: linear-gradient(180deg,var(--bg-1) 0%, #071226 60%);
+  color: #e6eef6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px;
+}
+
+/* App container centers the card */
+.app-container{width:100%;display:flex;align-items:center;justify-content:center}
+
+.todo-app-wrapper{
+  width:100%;
+  max-width:880px;
+  padding:28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 6px 30px rgba(3,8,15,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+.app-title{margin:0;font-size:clamp(20px, 2.4vw, 30px);letter-spacing:0.2px}
+.app-subtitle{margin:6px 0 18px;color:var(--muted);font-size:0.95rem}
+
+/* New task input */
+.new-task-input-container{display:flex;gap:12px;align-items:center;margin:8px 0 20px}
+.task-input-field{
+  flex:1;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding:12px 14px;border-radius:var(--radius-sm);
+  color: #eaf1ff; font-size:0.95rem;outline:none;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+}
+.task-input-field::placeholder{color:rgba(230,238,246,0.45)}
+.task-input-field:focus{box-shadow:0 6px 18px rgba(124,92,255,0.14);transform:translateY(-1px);border-color:var(--accent)}
+
+.add-task-button{
+  display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;border-radius:10px;padding:8px;border:0;background:linear-gradient(135deg,var(--accent),#5f49ff);color:white;cursor:pointer;transition:transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+  box-shadow: 0 6px 18px rgba(124,92,255,0.18);
+}
+.add-task-button:active{transform:translateY(1px) scale(.998)}
+.add-task-button:disabled{opacity:0.45;cursor:not-allowed;box-shadow:none}
+.add-task-button svg{display:block}
+
+/* List */
+.todo-list{list-style:none;margin:0;padding:6px;display:flex;flex-direction:column;gap:10px}
+.todo-item{display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02);transition:transform var(--transition), box-shadow var(--transition);}
+.todo-item:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(2,6,15,0.5)}
+
+.todo-item-content{display:flex;align-items:center;gap:12px;flex:1;cursor:pointer}
+
+.checkbox-wrap{display:inline-flex;align-items:center;position:relative;min-width:28px}
+.checkbox-wrap .todo-checkbox{position:absolute;inset:0;margin:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.custom-check{width:22px;height:22px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.08);display:inline-grid;place-items:center;background:transparent;transition:all var(--transition);box-shadow:inset 0 -3px 8px rgba(0,0,0,0.06)}
+.todo-checkbox:checked + .custom-check{background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;box-shadow:0 6px 18px rgba(92,72,255,0.12), inset 0 -3px 6px rgba(0,0,0,0.16)}
+.todo-checkbox:checked + .custom-check::after{content:'\2713';font-weight:700;color:#081020;font-size:12px;transform:translateY(-1px)}
+.todo-checkbox:focus + .custom-check{outline:2px solid transparent;box-shadow:0 0 0 4px rgba(124,92,255,0.12)}
+
+.todo-text{font-size:1rem;color: #eaf1ff;user-select:none}
+.todo-text.completed{opacity:0.65;color:rgba(255,255,255,0.7);text-decoration:line-through}
+
+.delete-button{border:0;background:transparent;color:var(--danger);cursor:pointer;padding:8px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;transition:transform var(--transition), background var(--transition), color var(--transition);}
+.delete-button:hover{background:rgba(255,255,255,0.02);transform:translateY(-2px)}
+.delete-button:active{transform:translateY(0)}
+.delete-button svg{color:rgba(255,255,255,0.7)}
+
+.empty-list-message{color:rgba(230,238,246,0.7);padding:20px;text-align:center;border-radius:8px;background:transparent}
+
+/* small screens */
+@media (max-width:580px){
+  .todo-app-wrapper{padding:18px;margin:0 8px}
+  .task-input-field{padding:10px;font-size:0.95rem}
+  .add-task-button{min-width:44px;height:44px}
+  .todo-item{padding:10px}
+}
+
+/* high-contrast and accessibility tweaks */
+@media (prefers-color-scheme: light){
+  body{background:linear-gradient(180deg,#f5f8ff,#eef6ff);color:#071226}
+  .todo-app-wrapper{background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:0 10px 30px rgba(8,11,20,0.06);border:1px solid rgba(11,18,36,0.04)}
+  .task-input-field{background:#fafbff;border:1px solid rgba(8,10,16,0.04);color:#091226}
+  .todo-text{color:#071226}
+}
+
+/* simple icon sizing */
+.icon-trash, .icon-plus{width:18px;height:18px;display:block}
+
+/* utility */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
