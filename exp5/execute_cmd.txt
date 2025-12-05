@@ -1,0 +1,9 @@
+POST: http://localhost:5000/api/contacts/
+BODY
+{
+  "name": "johnson",
+  "email": "john@gmail.com",
+  "phone": "4366"
+}
+
+GET: http://localhost:5000/api/contacts/

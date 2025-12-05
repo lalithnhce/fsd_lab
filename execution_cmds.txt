@@ -4,3 +4,20 @@ npm run start
 npm run dev
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 git clone https://github.com/lalithnhce/fsd_lab.git
+
+execute 6th program:
+  1. npm install 
+  2. npm run start
+
+execute 7th program:
+  1. npm install
+  2. npm run start
+
+excecute 11th program: (root: exp11/)
+  1. Go to client folder by: cd client
+  2. npm install
+  3. npm run start
+
+  4. Go to server folder (new terminal): cd server
+  5. npm install
+  6. npm run start
