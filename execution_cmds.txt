@@ -1,0 +1,6 @@
+npm install
+npm install -g @angular/cli
+npm run start
+npm run dev
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+git clone https://github.com/lalithnhce/fsd_lab.git
