@@ -1,0 +1,207 @@
+body { 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; /* A font similar to the image */ 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale; 
+  background-color: #5d2b99; /* Deep purple background for the page */ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+    padding: 20px; 
+} 
+ 
+.app-container { 
+  text-align: center; 
+  width: 100%; 
+} 
+ 
+h1 { 
+  color: white; /* Changed main title color */ 
+  margin-bottom: 20px; 
+  font-size: 2.5em; 
+} 
+ 
+/* Auth Form Container (Card) */ 
+.auth-form { 
+  background: white; 
+  padding: 40px 30px; 
+  border-radius: 20px; /* More rounded corners */ 
+  margin: 40px auto 20px auto; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow */ 
+  text-align: center; /* Center form content */ 
+  position: relative; /* For potential absolute positioning later */ 
+  max-width: 400px; /* Keep the max-width for desktop */ 
+  margin: 20px auto; 
+} 
+ 
+.form-title { 
+  color: #5d2b99; /* Purple title */ 
+  font-size: 2.2em; 
+  margin-bottom: 30px; 
+  position: relative; 
+  display: inline-block; /* To allow pseudo-element underline */ 
+} 
+ 
+.form-title::after { /* Underline effect */ 
+  content: ''; 
+  position: absolute; 
+  left: 50%; 
+  bottom: -10px; 
+  transform: translateX(-50%); 
+  width: 50px; 
+  height: 4px; 
+  background-color: #5d2b99; 
+  border-radius: 2px; 
+} 
+ 
+ 
+/* Input Groups (with icons) */ 
+.input-group-custom { 
+  background-color: #f0f0f0; /* Light grey background for input fields */ 
+  border-radius: 12px; /* Rounded input fields */ 
+  margin-bottom: 25px; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 15px; 
+  height: 60px; /* Taller input fields */ 
+} 
+ 
+.input-group-custom .icon { 
+  font-size: 1.2em; 
+  color: #777; /* Icon color */ 
+  margin-right: 15px; 
+} 
+ 
+.input-group-custom input { 
+  flex-grow: 1; /* Input takes up remaining space */ 
+  border: none; 
+  background: transparent; 
+  padding: 10px 0; 
+  font-size: 1.1em; 
+  color: #333; 
+ 
+} 
+ 
+.input-group-custom input::placeholder { 
+  color: #a0a0a0; 
+} 
+ 
+.input-group-custom input:focus { 
+  outline: none; 
+} 
+ 
+/* Lost Password Link */ 
+.forgot-password { 
+  text-align: right; 
+  margin-top: -10px; /* Move closer to inputs */ 
+  margin-bottom: 30px; 
+  font-size: 0.9em; 
+} 
+ 
+.forgot-password a { 
+  color: #5d2b99; /* Purple link */ 
+  text-decoration: none; 
+  font-weight: 500; 
+} 
+ 
+.forgot-password a:hover { 
+  text-decoration: underline; 
+} 
+ 
+/* Buttons Group */ 
+.form-buttons-group { 
+  display: flex; 
+  justify-content: space-between; /* Space out the two buttons */ 
+  margin-top: 40px; 
+} 
+ 
+.submit-btn, .switch-btn { 
+  padding: 15px 25px; 
+  border: none; 
+  border-radius: 30px; /* Heavily rounded buttons */ 
+  cursor: pointer; 
+  font-size: 1.1em; 
+  font-weight: 600; 
+  transition: all 0.3s ease; 
+  flex-grow: 1; /* Allow buttons to grow */ 
+  margin: 0 5px; /* Space between buttons */ 
+} 
+ 
+/* Specific button styles from image */ 
+
+ 
+.signup-btn-custom { 
+  background-color: #5d2b99; /* Purple */ 
+  color: white; 
+} 
+ 
+.signup-btn-custom:hover { 
+  background-color: #4a237a; 
+} 
+ 
+.login-switch-btn-custom { /* The "Login" button next to "Sign Up" */ 
+  background-color: #f0f0f0; /* Light grey */ 
+  color: #5d2b99; /* Purple text */ 
+} 
+ 
+.login-switch-btn-custom:hover { 
+  background-color: #e0e0e0; 
+} 
+ 
+/* Dashboard View (Adjusted for new background) */ 
+.dashboard { 
+  padding: 40px; 
+  background: white; 
+  border-radius: 12px; 
+  max-width: 500px; 
+  margin: 50px auto; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+  color: #333; /* Darker text for readability on white background */ 
+} 
+ 
+.dashboard h2 { 
+  color: #5d2b99; /* Purple for dashboard heading */ 
+} 
+ 
+.logout-btn { 
+  padding: 10px 20px; 
+  background-color: #dc3545; /* Red */ 
+  color: white; 
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  margin-top: 20px; 
+  font-weight: 600; 
+  transition: background-color 0.3s; 
+} 
+ 
+.logout-btn:hover { 
+  background-color: #c82333; 
+} 
+ 
+ 
+/* Login Form Specific adjustments if needed */ 
+.login-form-custom .login-btn-custom { 
+    background-color: #5d2b99; /* Purple for Login submit button */ 
+    color: white; 
+} 
+ 
+.login-form-custom .login-btn-custom:hover { 
+    background-color: #4a237a; 
+} 
+ 
+.login-form-custom .signup-switch-btn-custom { 
+    background-color: #f0f0f0; /* Light grey for Signup switch button */ 
+    color: #5d2b99; /* Purple text */ 
+} 
+ 
+.login-form-custom .signup-switch-btn-custom:hover { 
+    background-color: #e0e0e0; 
+} 
+ 
+/* If you need to use a custom font, add this to your index.html <head> or 
+import it in App.css */ 
+/* <link 
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&di
+ splay=swap" rel="stylesheet"> */ 
