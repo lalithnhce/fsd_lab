@@ -1,0 +1,10 @@
+http://localhost:5000/api/products
+
+GET: http://localhost:5000/api/products
+GET: http://localhost:5000/api/products/1
+
+POST: http://localhost:5000/api/products
+{
+  "name": "Monitor",
+  "price": 250
+}
