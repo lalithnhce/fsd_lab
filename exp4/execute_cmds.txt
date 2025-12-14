@@ -1,0 +1,55 @@
+Step-by-step Thunder Client requests for testing the Express API (http://localhost:5000)
+
+1) GET all products
+- Method: GET
+- URL: http://localhost:5000/api/products
+- No body
+- Expected: 200 OK, JSON array of products
+
+2) GET product by ID
+- Method: GET
+- URL: http://localhost:5000/api/products/1
+- No body
+- Expected: 200 OK, single product JSON
+
+3) CREATE new product
+- Method: POST
+- URL: http://localhost:5000/api/products
+- Headers: Content-Type: application/json
+- Body (raw JSON):
+{
+  "name": "Headphones",
+  "price": 95
+}
+- Expected: 201 Created, returned product with id
+
+4) UPDATE product by ID (replace or partial)
+- Method: PUT
+- URL: http://localhost:5000/api/products/2
+- Headers: Content-Type: application/json
+- Body (raw JSON examples):
+// Update both fields:
+{
+  "name": "Wireless Mouse",
+  "price": 35
+}
+
+// Update only price:
+{
+  "price": 29
+}
+
+- Expected: 200 OK, returned updated product JSON
+- Errors: 400 if neither name nor price provided, 404 if id not found
+
+5) DELETE product by ID
+- Method: DELETE
+- URL: http://localhost:5000/api/products/3
+- No body
+- Expected: 200 OK, JSON message and deleted product
+- Errors: 404 if id not found
+
+Notes:
+- Start the server with: node expressServer.js (port 5000)
+- In Thunder Client, set a collection called "Products API" and add the above requests in order.
+- Make sure to set `Content-Type: application/json` for POST/PUT.

@@ -49,6 +49,39 @@ app.post('/api/products', (req, res) => {
   res.status(201).json(newProduct);
 });
 
+// UPDATE product by ID
+app.put('/api/products/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const productIndex = products.findIndex(p => p.id === id);
+
+  if (productIndex === -1) {
+    return res.status(404).json({ message: 'Product not found.' });
+  }
+
+  const { name, price } = req.body;
+  if (name === undefined && price === undefined) {
+    return res.status(400).json({ message: 'At least one of name or price is required to update.' });
+  }
+
+  if (name !== undefined) products[productIndex].name = name;
+  if (price !== undefined) products[productIndex].price = price;
+
+  res.json(products[productIndex]);
+});
+
+// DELETE product by ID
+app.delete('/api/products/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const productIndex = products.findIndex(p => p.id === id);
+
+  if (productIndex === -1) {
+    return res.status(404).json({ message: 'Product not found.' });
+  }
+
+  const deleted = products.splice(productIndex, 1)[0];
+  res.json({ message: 'Product deleted successfully.', product: deleted });
+});
+
 // Start server
 const port = 5000;
 app.listen(port, () => {
