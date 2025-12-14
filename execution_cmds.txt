@@ -5,7 +5,7 @@ npm run dev
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 git clone https://github.com/lalithnhce/fsd_lab.git
 
-execute 5th, 6th, 7th, 8th, 9th, 10th program:
+execute 4th, 5th, 6th, 7th, 8th, 9th, 10th program:
   1. npm install 
   2. npm run start
 
