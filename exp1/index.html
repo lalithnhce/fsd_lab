@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Admission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .checkbox {
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Student Admission Form</h2>
+
+  <form id="admissionForm">
+    <label>Full Name</label>
+    <input type="text" id="name">
+
+    <label>Email Address</label>
+    <input type="email" id="email">
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob">
+
+    <label>Select Course</label>
+    <select id="course">
+      <option value="">-- Please Select --</option>
+      <option>Computer Science</option>
+      <option>Business Administration</option>
+      <option>Electrical Engineering</option>
+      <option>Arts & Humanities</option>
+    </select>
+
+    <div class="checkbox">
+      <input type="checkbox" id="terms">
+      I agree to the terms and conditions
+    </div>
+
+    <div id="error" class="error"></div>
+
+    <button type="submit">Submit Admission</button>
+  </form>
+
+  <div id="success" class="success"></div>
+</div>
+
+<script>
+  document.getElementById("admissionForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const dob = document.getElementById("dob").value;
+    const course = document.getElementById("course").value;
+    const terms = document.getElementById("terms").checked;
+
+    const errorDiv = document.getElementById("error");
+    const successDiv = document.getElementById("success");
+
+    errorDiv.textContent = "";
+    successDiv.textContent = "";
+
+    if (name === "" || email === "" || dob === "" || course === "") {
+      errorDiv.textContent = "All fields are mandatory.";
+      return;
+    }
+
+    if (!terms) {
+      errorDiv.textContent = "You must agree to the terms and conditions.";
+      return;
+    }
+
+    successDiv.textContent = "Admission Form Submitted Successfully!";
+    document.getElementById("admissionForm").reset();
+  });
+</script>
+
+</body>
+</html>
