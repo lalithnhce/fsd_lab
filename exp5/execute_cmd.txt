@@ -1,3 +1,8 @@
+Create a file called .env and write following
+MONGO_URI=<mongo_connection_string>
+
+# replace <mongo_connection_string> with mongodb connection string.
+
 POST: http://localhost:5000/api/contacts/
 BODY
 {
